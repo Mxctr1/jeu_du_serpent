@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         nouvellePartie() {
+            this.finPartie();
             this.affichagePointage(1);
             this.pomme = new Pomme(this);
             this.serpent = new Serpent();
@@ -20,6 +21,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         finPartie() {
 
+            if (this.pomme !== undefined) {
+                this.pomme.supprimePomme();
+            }
 
         }
 
@@ -58,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var posX = Math.floor(Math.random() * this.leJeu.grandeurGrille);
             var posY = Math.floor(Math.random() * this.leJeu.grandeurGrille);
 
-            this.pomme = [this.leJeu.s.rect(posX * this.leJeu.grandeurCarre,posY * this.leJeu.grandeurCarre,this.leJeu.grandeurCarre,this.leJeu.grandeurCarre).attr({fill:"red"}),posX,posY];
+            this.pomme = [this.leJeu.s.rect(posX * this.leJeu.grandeurCarre, posY * this.leJeu.grandeurCarre, this.leJeu.grandeurCarre, this.leJeu.grandeurCarre).attr({fill: "red"}), posX, posY];
 
         }
 
