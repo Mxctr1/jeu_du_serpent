@@ -37,8 +37,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 //Objet Le serpent
     class Serpent {
-        constructor() {
+        constructor(_leJeu) {
             console.log("serpent");
+
+            this.leJeu = _leJeu;
+
+        }
+
+        verifTouche(evt) {
+
+        }
+
+        deplacement(dirCode) {
+
+        }
+
+        controleSerpent(){
+
+        }
+
+
+        dessineCarre(x,y){
+
+        }
+
+        supprimeSerpent(){
+
+
         }
     }
 
