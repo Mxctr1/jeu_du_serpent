@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             this.nextMoveY = 0;
 
             this.serpentLongueur = 1;
-            this.TblCarreSerpent = [];
+            this.tblCarreSerpent = [];
             this.vitesse = 250;
             this.timing = setInterval(this.controleSerpent.bind(this),this.vitesse);
 
@@ -100,6 +100,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         dessineCarre(x, y) {
 
+          var unCarre =   [this.leJeu.s.rect(x * this.leJeu.grandeurCarre, y * this.leJeu.grandeurCarre, this.leJeu.grandeurCarre, this.leJeu.grandeurCarre),x , y];
+
+          this.tblCarreSerpent.push(unCarre);
+
+          if(this.tblCarreSerpent.length > this.serpentLongueur){
+              this.tblCarreSerpent[0][0].remove();
+              this.tblCarreSerpent.shift();
+          }
         }
 
         supprimeSerpent() {
